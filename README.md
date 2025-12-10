@@ -21,14 +21,14 @@ Documentation is available at https://kiro.dev/docs/powers/
 ---
 
 ### aws-infrastructure-as-code
-**AWS Infrastructure as Code** - Generate well-architected AWS infrastructure with CDK and CloudFormation - access latest documentation, validate templates, and troubleshoot deployments
+**Build AWS infrastructure with CDK and CloudFormation** - Generate well-architected AWS infrastructure with CDK and CloudFormation - access latest documentation, validate templates, and troubleshoot deployments.
 
-**MCP Servers:** aws-iac-mcp-server
+**MCP Servers:** awslabs.aws-iac-mcp-server
 
 ---
 
 ### cloud-architect
-**AWS CDK with Python** - Build AWS infrastructure as code following AWS Well-Architected framework best practices. Specialized for Python CDK development with comprehensive testing strategies.
+**Build infrastructure on AWS** - Build AWS infrastructure with CDK in Python following AWS Well-Architected framework best practices.
 
 **MCP Servers:** awspricing, awsknowledge, awsapi, context7, fetch
 
@@ -49,23 +49,30 @@ Documentation is available at https://kiro.dev/docs/powers/
 ---
 
 ### figma
-**Design to Code** - Connect Figma designs to code components, automatically generate design system rules, and maintain design-code consistency.
+**Design to Code with Figma** - Connect Figma designs to code components - automatically generate design system rules, map UI components to Figma designs, and maintain design-code consistency.
 
-**MCP Servers:** figma (HTTPS API)
+**MCP Servers:** figma
 
 ---
 
 ### neon
-**Neon Serverless Postgres** - Serverless Postgres with database branching, autoscaling, and scale-to-zero capabilities.
+**Build a database with Neon** - Serverless Postgres with database branching, autoscaling, and scale-to-zero - perfect for modern development workflows.
 
-**MCP Servers:** neon (remote MCP)
+**MCP Servers:** neon
 
 ---
 
 ### postman
-**Postman API Testing** - Automate API testing and collection management with Postman - create workspaces, collections, environments, and run tests programmatically.
+**API Testing with Postman** - Automate API testing and collection management with Postman - create workspaces, collections, environments, and run tests programmatically.
 
-**MCP Servers:** postman (40 tools in minimal mode, 112 in full mode)
+**MCP Servers:** postman
+
+---
+
+### power-builder
+**Power Builder** - Complete guide for building and testing new Kiro Powers with templates, best practices, and validation.
+
+**MCP Servers:** None (Knowledge Base Power)
 
 ---
 
@@ -86,12 +93,12 @@ Documentation is available at https://kiro.dev/docs/powers/
 ### stripe
 **Stripe Payments** - Build payment integrations with Stripe - accept payments, manage subscriptions, handle billing, and process refunds.
 
-**MCP Servers:** stripe (HTTPS API)
+**MCP Servers:** stripe
 
 ---
 
 ### terraform
-**Terraform** - Build and manage infrastructure as code with Terraform - access registry providers, modules, policies, and HCP Terraform workspace management.
+**Deploy infrastructure with Terraform** - Build and manage Infrastructure as Code with Terraform - access registry providers, modules, policies, and HCP Terraform workflow management.
 
 **MCP Servers:** terraform (Docker stdio)
 
