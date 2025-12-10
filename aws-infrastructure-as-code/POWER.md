@@ -15,10 +15,69 @@ Build well-architected CDK applications using the latest documentation on constr
 ## When to Use This Power
 
 **Build high-quality CDK applications**
-Use this power to write high-quality CDK code by accessing the latest construct documentation, applying CDK best practices, and learning from gold-standard code samples across TypeScript, Python, Java, C#, and Go. The power helps you build infrastructure that follows established patterns and CDK-NAG security checks from the start.
+Use this power to create or update high-quality CDK applications by accessing the latest construct documentation, applying CDK best practices, and learning from gold-standard code samples across TypeScript, Python, Java, C#, and Go. The power helps you build infrastructure that follows established patterns and CDK-NAG security checks from the start.
 
 **Ensure CloudFormation template reliability and security**
 Use this power to validate templates before deployment, check security compliance against AWS Guard Rules and Control Tower controls, get pre-deployment validation guidance, and troubleshoot failed deployments with intelligent failure analysis. The power helps you catch issues early and resolve problems quickly with CloudTrail deep links and pattern-based diagnostics.
+
+## Onboarding
+
+### Prerequisites
+
+**Most features work without AWS credentials:**
+- CDK documentation search and code samples
+- Writing CDK code
+- Synthesizing CDK to CloudFormation (`cdk synth`)
+- CloudFormation template validation (cfn-lint)
+- Security compliance checking (cfn-guard)
+- Documentation reading
+
+**AWS credentials are required for:**
+- Deploying CDK applications (`cdk deploy`)
+- Troubleshooting failed CloudFormation deployments (uses AWS APIs to read stack events and CloudTrail)
+
+### AWS Credentials Setup (Optional)
+
+**Skip this section if you only need CDK development and template validation.**
+
+If you plan to troubleshoot CloudFormation deployments, configure AWS credentials:
+
+**Step 1: Configure AWS CLI**
+```bash
+aws configure
+```
+
+Provide:
+- AWS Access Key ID
+- AWS Secret Access Key
+- Default region (e.g., us-east-1)
+- Output format (json recommended)
+
+**Step 2: Verify credentials**
+```bash
+aws sts get-caller-identity
+```
+
+**Step 3: Ensure IAM permissions**
+
+Your AWS credentials need these permissions for troubleshooting:
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:DescribeStacks",
+        "cloudformation:DescribeStackEvents",
+        "cloudformation:DescribeStackResources",
+        "cloudtrail:LookupEvents"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
 
 ## CDK Development Workflow
 
@@ -262,29 +321,7 @@ usePower("aws-infrastructure-as-code", "awslabs.aws-iac-mcp-server", "get_cloudf
 
 ## AWS Credentials & Permissions
 
-**Only the `troubleshoot_cloudformation_deployment` tool requires AWS credentials.** All other tools (template validation, compliance checking, documentation search) run locally or against public APIs without credentials.
-
-**For deployment troubleshooting**, configure AWS credentials and the following IAM permissions:
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "cloudformation:DescribeStacks",
-        "cloudformation:DescribeStackEvents",
-        "cloudformation:DescribeStackResources",
-        "cloudtrail:LookupEvents"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-```
-
-**Configure credentials** via AWS CLI (`aws configure`) or environment variables (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_DEFAULT_REGION`).
+See the [Onboarding](#onboarding) section for AWS credentials setup. Only the `troubleshoot_cloudformation_deployment` tool requires AWS credentials - all other tools work without them.
 
 ## Security Considerations
 
